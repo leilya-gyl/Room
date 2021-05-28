@@ -20,8 +20,24 @@ public class MyViewModel extends AndroidViewModel {
         driverList = myRepository.getAllDrivers();
     }
 
-    public LiveData<List<Driver>> getDrivers() { return driverList;}
+    public LiveData<List<Driver>> getDrivers() {
+        return driverList;
+    }
 
-    public void insert(Driver driver) { myRepository.insert(driver);}
+    public void insert(Driver driver) {
+        myRepository.insert(driver);
+    }
+
+    public void  delete(Driver driver) {
+        myRepository.delete(driver);
+    }
+
+    public void  deleteAllDrivers() {
+        myRepository.deleteAllDrivers();
+    }
+
+    public Driver getDriver(long id) {
+        return myRepository.getDriver(id);
+    }
 
 }

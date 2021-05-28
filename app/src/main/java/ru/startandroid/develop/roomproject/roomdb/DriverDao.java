@@ -21,12 +21,6 @@ public interface DriverDao {
     @Query("SELECT * FROM drivers WHERE _id = :id")
     Driver getById(long id);
 
-    @Query("SELECT * FROM drivers")
-    Cursor getDriversCursor();
-
-    @Query("SELECT * FROM drivers WHERE _id = :id")
-    Driver getCursorById(long id);
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)// если запись уже есть в таблице, то старая запись будет заменена на новую
     void insert(Driver driver);
 
